@@ -1,0 +1,21 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<div class="container">
+    <h2 class="mt-3 text-center">Todos</h2>
+    {%for todo in todos %}
+    <div class="card float-start mt-5 me-4" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{todo.name}}</h5>
+          <p class="card-text">{{todo.created | timesince}}</p>
+          <a href="#" class="card-link">View</a>
+          <a href="#" class="card-link"></a>
+        </div>
+      </div>
+    {%endfor%}
+
+
+</div>
+
+
+{%endblock%}
