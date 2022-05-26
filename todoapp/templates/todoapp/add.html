@@ -1,17 +1,32 @@
 {%extends 'base.html' %}
 
 {%block content%}
+
+{%if page == 'add-todo' %}
 <div class="container pt-5">
     <h3 class="mb-5">Add Todos</h3>
 
-<form action="" method="POST">
-    {%csrf_token%}
-    <div class="form-control p-5">
-        {{form.as_p}}
-        <input class='btn btn-primary'type="submit" value="Submit">
-    </div>
-    
-</form>
+    <form action="" method="POST">
+        {%csrf_token%}
+        <div class="form-control p-5">
+            {{form.as_p}}
+            <input class='btn btn-primary'type="submit" value="Submit">
+        </div>
+        
+    </form>
+{%else%}
+<h3 class="mb-5">Assign Todo</h3>
+    <form action="" method="POST">
+        {%csrf_token%}
+        <div class="form-control p-5">
+            {{form.as_p}}
+            <input class='btn btn-primary'type="submit" value="Submit">
+        </div>
+        
+    </form>
+
+
+{%endif%}
 
 
 </div>

@@ -37,7 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'todoapp'
+    'django.contrib.postgres',
+    'todoapp',
+    'crispy_forms',
+    'bootstrap4',
 
 ]
 
@@ -82,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'todo',
         'USER': 'michelle',
-    'PASSWORD':'todoadmin',
+        'PASSWORD':'todoadmin',
     }
 
 
@@ -129,3 +132,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
