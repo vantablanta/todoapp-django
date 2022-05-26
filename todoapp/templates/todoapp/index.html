@@ -1,0 +1,27 @@
+{%extends 'base.html' %}
+
+{%block content%}
+<h2 class="mt-3 text-center">Todos</h2>
+<div class="container">
+  <button class="btn btn-primary float-end">
+    <a class='text-light nav-link'href="{%url 'add-todo'%}"> Add Todo</a>
+  </button>
+  {%for todo in todos %}
+  <div class="card float-start mt-5 me-4" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{todo.name}}</h5>
+      <p class="card-text">Added: {{todo.created | timesince}}</p>
+      <a href="{% url 'view-todo'  todo.id %}">View Todo</a>
+      <!-- <a href="{%url 'view-todo' todo.id%}" class="card-link">View</a> -->
+      <a href="{%url 'delete-todo' todo.id%}" class="card-link float-end">Delete</a>
+    </div>
+  </div>
+  {%endfor%}
+
+</div>
+
+
+
+
+
+{%endblock%}
